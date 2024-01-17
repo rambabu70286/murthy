@@ -1,6 +1,6 @@
 body{
-    margin: 5em;
-    padding:10px;
+    margin: 10em;
+    padding:20px;
 }
 .img{
     width: 500px;
@@ -8,7 +8,7 @@ body{
 }
 .figure
 {
-    font-style: italic;
+    font-style: oblique;
 }
 p{
     text-align: justify;

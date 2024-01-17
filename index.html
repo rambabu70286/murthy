@@ -1,175 +1,179 @@
 <html>
     <hend>
-        <title>xml sample</title>
+        <titel>My Project</titel>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     </hend>
     <body>
-    <h1>Figure 2: Graphical model of a fictitious medical BBN</h1>
-        <biv>
-        <center>
-            <img src="Screenshot%202024-01-16%20163645.png">
-            </center>
-            <p>&nbsp;&nbsp;&nbsp;show signs of pain in the chest reflected by the high probability assigned to this case.
-On the other hand, given a heart attack, the patient is not likely to have tingling fingers;
-the low conditional probability value describes such a state. We see that the events P
-and F have a common cause (M) but do not depend on S. Applying the product rule to
-the graph above, we may decompose the joint probability of one case (P(S,M,P,F) =
-P(S=true, M=true, P=true, F=true)) into a set of independent parent-child contributions
-as P(S, M, P, F) = P(S) * P(M|S) * P(P|M) * P(F|M). Having specified the model we can
-calculate the prior probabilities of each node in the network. For example P(M=true) can
-be calculated as</p>
+        <div>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;data centered about new e-health models of care delivery. One such model for health care
+was the CHIN, which was a widely sought after model in the late 1990s, and continues
+to be widely debated by leading industry groups, such as The Healthy Cities Organization (http://www.healthycities.org) and the IEEE-USA Medical Technology and Policy
+Committee (http://www.ieeeusa.org/committees/MTPC).</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;While CHINs were said to enable multiple organizations to share health services
+data in order to meet common objective(s), ranging from profit maximization to improvement of public health conditions and wellness, health care organizations are now
+deploying e-health strategies to accomplish these goals while garnering data to address
+community and public health needs. Thus, health care organizations are finding value
+as well as strategic applications to mining patient data, in general, and community data,
+in particular. While significant gains can be obtained and have been noted at the
+organizational level of analysis, much attention has been given to the individual where
+the focal points have centered about privacy and security of patient data. While the
+privacy debate is a salient issue, data mining offers broader community-based gains that
+enable and improve health care forecasting, analyses, and visualization</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Thus, the objectives of this chapter are:</p>
+            <p>1)&nbsp;&nbsp;&nbsp;&nbsp;To describe the uses of data-mining techniques in health care;</p>
+             <p>2)&nbsp;&nbsp;&nbsp;&nbsp;To explore the intersection of data mining in the context of CHINs;</p>
+             <p>3)&nbsp;&nbsp;&nbsp;&nbsp;To explain how the CHIN platform can be used for fraud detection, profitability
+analysis, patient profiling, and retention management;</p>
+             <p>4)&nbsp;&nbsp;&nbsp;&nbsp;To discuss emerging and future trends; and</p>
+             <p>5)&nbsp;&nbsp;&nbsp;&nbsp; To explore the technical and social issues that remain</p>
             <center>
-            <h3>P(M=true) = P(M|S=true)*P(S=true) + P(M|S=false)*P(S=false) = 0.5</h3>
-<h3>Then P(P=true) and P (F=true) are calculated as:</h3>
-<h3>P(P=true) = P(P|M=true)*P(M=true) + P(P|M=false)*P(M=false) = 0.6</h3>
-<h3>P(F=true) = P(F|M=true)*P(M=true) + P(F|M=false)*P(F=false) = 0.2</h3>
-                </center>
-            <p>&nbsp;&nbsp;&nbsp;The previous probabilities corresponded to the beliefs that we had on each of the
-network attributes (nodes) without considering any additional evidence. As before, we may
-wish to find the most probable hypothesis given a set of observations. In this case, we might
-want to determine whether it is more likely that the patient has a heart attack or not, given the
-fact that he/she has signs of chest pain. For such purposes, we need to compare
-P(M=true|P=true) and P(M=false|P=true): if the first conditional probability is greater, we infer
-that the patient has a heart attack; if it is smaller we accept the hypothesis that the patient
-does not have a heart attack4
-. To calculate these posterior probabilities, we apply conditional
-probability in the following way:</p>
-                <center>
-            <img src="Screenshot%202024-01-16%20164931.png">
+                <h1>DATA MINING IN HEALTH CARE</h1>
             </center>
-            <p>&nbsp;&nbsp;&nbsp;Two questions arise in formulating BBNs: (1) how to determine the underlying
-causal model expressed as a graph, which includes the specification of the conditional
-independence assumptions among the attributes of the model? and (2) how to determine
-the conditional probability distributions that quantify the dependencies among the
-attributes in the model? In the following, we address these two questions, while noting
-that a detailed review of the topic is beyond the scope of this chapter</p>
-            <p>&nbsp;&nbsp;&nbsp;Most probable Hypothesis = argmax [P(M= true, P= true), P(M= true, P= true) ]</p>
-<p>We can calculate both P(M= true, P= true) and P(M= true, P= true) from the conditional
-probability tables associated with each node:</p>
-            
-            <center>
-            <h3>P(M=true,P=true) = P(S=true, M=true, P=true, F=true) +</h3>
- <h3>P(S=true, M=true, P=true, F=false) +</h3>
-<h3> P(S=false, M=true, P=true, F=true) +</h3>
-<h3> P(S=false, M=true, P=true, F=false)</h3>
-<h3>P(M=false,P=true) = P(S=true, M=false, P=true, F=true) +</h3>
- <h3>P(S=true, M=false, P=true, F=false) +</h3>
- <h3>P(S=false, M=false, P=true, F=true) +</h3>
- <h3>P(S=false, M=false, P=true, F=false)</h3>
-                </center>
-            <p>&nbsp;&nbsp;&nbsp;It should be noted that each joint probability in the above expressions is calculated by
-                applying the causal model depicted in Figure 2. For example, if we wish to calculate P(S=true</p>
-            <center>
-<h3>M=true, P=true, F=true) :</h3>
-<h3>P(S=true, M=true, P=true, F=true) = P(S) * P(M|S) * P(P|M) * P(F|M)</h3>
-            <h3> = 0.4 * 0.8 * 0.9 * 0.1 = 0.0288</h3>
-            </center>
-            <p>&nbsp;&nbsp;&nbsp;As indicated before, because a BBN determines a joint probability distribution for
-the set of attributes in the network, the Bayesian network can—in principle—be used to
-compute any probability of interest. For problems with many variables, however, this
-approach is not practical. Several researchers have developed probabilistic inference
-algorithms that apply variations of the conditional independence concept. Pearl (1988)
-and Lauritzen and Spieglelhalter (1988) developed the two most well known algorithms.
-Pearl’s algorithm, for instance, is based on a message-passing concept. The new
-evidence is propagated over the network by sending messages to neighbor nodes.
-Through the arcs —acting as communication channels—the nodes send messages
-providing information about the joint probability distribution that is defined by the
-network and the evidence obtained so far.
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Data mining has often been defined as a “process of extracting previously unknown,
+valid and actionable information from large databases and then using the information to
+make critical business decisions” (Cabena, Hadjinian, Stadler, Verhees, & Zanasi, 1998).
+This definition is based on the premise that an organization can link its myriad sources
+of data into a data warehouse (to potentially include data marts). Further, these data
+sources can evolve to a higher degree of analyses to include exploration using on-line
+analytical processing (OLAP), statistical analyses, and querying. One mechanism that
+can be used to migrate beyond exploration and permit organizations to engage in
+information discovery is the Sample, Explore, Modify, Model and Assess (SEMMA)
+Methodology, as developed by the SAS Corporation (http://www.sas.com). In sum,
+SEMMA enables its users to: 1) test a segment of data (test data) to be mined for
+preliminary outcomes; 2) assess this sample data for outliers, trends, etc.; 3) revise the
+sample data set for model testing, which can include neutral networks, linear regression,
+and decision trees; 4) evaluate the model for accuracy; and 5) validate the model using
+the complete data set (Groth, 1998)</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;In general, the rationale for mining data is a function of organizational needs and
+type of firm’s role in the industry. Moreover, researchers (Hirji, 2001; Keim, 2001) have
+established that data-mining applications, when implemented effectively, can result in
+strategic planning and competitive advantage. In an effort to minimize the collection andstorage of useless and vast amounts of data, mining can identify and monitor which data
+are most critical to an organization – thereby providing efficient collection, storage, and
+exploration of data (Keim, 2001). The efficiencies associated with mining of “most vital
+data” can result in improved business intelligence, heightened awareness of often
+overlooked relationships in data, and discovery of patterns and rules among data
+elements (Hirji, 2001). Others (http://www.sas.com; Groth, 1998) offer that data mining
+permits improved precision when executing
 </p>
-           
-            <h2>Training Bayesian Belief Networks</h2>
-           
-            <p>&nbsp;&nbsp;Two questions arise in formulating BBNs: (1) how to determine the underlying
-causal model expressed as a graph, which includes the specification of the conditional
-independence assumptions among the attributes of the model? and (2) how to determine
-the conditional probability distributions that quantify the dependencies among the
-attributes in the model? In the following, we address these two questions, while noting
-that a detailed review of the topic is beyond the scope of this chapter</p>
-            <p>&nbsp;&nbsp;&nbsp;As described by Ramoni and Sebastiani (1999), BBNs were originally supposed to
-rely on domain experts to supply information about the conditional independence
-graphical model and the subjective assessment of conditional probability distributions
-that quantify the dependencies among attributes. However, the statistical foundation of
-BBN soon led to the development of methods to extract both structure and conditional
-probability estimations from data, thus turning BBNs into powerful data analysis tools.
-Learning BBNs from data is a rapidly growing field of research that has seen a great deal
-of activity in recent years, including work by Lam and Bachus (1994), Friedman and
-Goldszmidt (1996), and Heckerman, Geiger and Chickering (1994)</p>
-            <p>&nbsp;&nbsp;&nbsp;There are a number of possible scenarios to consider when addressing the problem
-of training a BBN</p>
-            <p>– When the structure of the BBN is known and all the attributes for all the instances
-are observable in the training examples, learning the conditional probabilities is
-quite straightforward. We simply estimate the conditional probabilities by maximizing the likelihood of the training data, as in the case of the Naive Bayes Classifier
-(estimating relative frequencies with zero-frequency corrections, for example)</p>
-            <p>– When the structure of the BBN is known but not all of the variables are observable
-(partially or totally) in the training data, we come across a more complicated
-problem. In such a case, we can resort to algorithms intended to deal with missing
-values, such as the Estimation Maximization (EM) algorithm. For a detailed
-explanation on the EM algorithm and its use in training BBNs, see Mitchell (1997).
-Another approach is assimilating the problem to the case of estimating the weights
-of the hidden nodes in a neural network. In that case, a gradient ascent approach
-can be used, where the algorithm searches through the space of hypotheses
-corresponding to the set of all possible entries in the conditional probability table</p>
-            <p>– When the structure of the network is not known, we face a problem of model
-selection, typically a much more complicated problem than the two previously
-described cases. The goal is to find the network, or group of networks, that best
-describes the probability distribution over the training data. This optimization
-process is implemented in practice by using heuristic search techniques to find the
-best model over the space of possible BBNs. A scoring system is commonly used
-for choosing among alternative networks. Lam and Bachus (1994), for example,
-have used a score based on the minimum description principle (MDL), an information theoretic perspective of Occam’s Razor principle according to which simple,
-sparse models should be preferred to complex overfitted models</p>
+            <p>•&nbsp;&nbsp;&nbsp;&nbsp;Fraud Detection and Abuse;</p>
+            <p>•&nbsp;&nbsp;&nbsp;&nbsp; Profitability Analysis;</p>
+            <p>• &nbsp;&nbsp;&nbsp;&nbsp;Customer (Patient) Profiling; and</p>
+            <p>•&nbsp;&nbsp;&nbsp;&nbsp; Retention Management.</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;In particular, data mining offers the health care industry the capabilities to tackle
+imminent challenges germane to its domain. Among them being:</p>
+            <p>•&nbsp;&nbsp;&nbsp;&nbsp; Fraud Detection and Abuse – identification of potential fraud and/or abuse; this
+is applicable to insurance claims processing, verification and payment</p>
+            <p>•&nbsp;&nbsp;&nbsp;&nbsp; Profitability Analysis – determination of categories of profit and loss levels; this
+can be practical for analyses of diagnosis related groups (DRGs) and managed care
+enrollments</p>
+            <p>•&nbsp;&nbsp;&nbsp;&nbsp; Patient Profiling – discovery of patients’ health and lifestyle histories as they can
+                impact medical coverage and service utilization</p>
+<p>•&nbsp;&nbsp;&nbsp;&nbsp; Retention Management – identification of loyal patients and services they use; as
+well as those patients that depart from a particular insurance group, community and
+profile segment</p>
             <center>
-            <h1>ARKOV CHAIN MONTE CARLO</h1>
-            <h1>TECHNIQUES</h1>
-                </center>
-            <p>&nabp;&nbsp;&nbsp;Markov Chain Monte Carlo (MCMC) techniques have been mainly responsible for
-the current momentum gained by Bayesian methods, since its application has enabled
-the use of A vast range of Bayesian models that had been previously deemed as
-intractable. With complicated models, it is rare that the posterior distribution can be
-computed directly. The simulation techniques described in the previous section are only
-adequate when dealing with low-dimensional problems but cannot be successfully
-applied in many real-world problems. This is where MCMC excels. MCMC is intrinsically
-a set of techniques for simulating from multivariate distributions. In order to introduce
-the topic, we need to provide some definitions regarding stochastic processes and
-                Markov chains.</p>
-            
-            <h2>Markov Chains</h2>
-        <p> &nbsp;&nbsp;&nbsp;A random or stochastic process is a family of random variables {X(t), t∈T} defined
-over a given probability space and indexed by a parameter t that varies over an index set T.
-The values assumed by X(t) are called states. If T is discrete then the process is called a
-discrete-time process and is denoted as {Xn, n=1,2,..,n}. X1 is the initial state of the process
-and Xn is the state of the process at time n.</p>
-        <p>A Markov chain is a special case of a discrete-time process in which the following rule
-applies: At any given time n, the probabilities of the future state n+1 depend only on the
-current state Xn. This is expressed as:</p>
-        <center>
-            <h3>current state Xn. This is expressed as:
-P(Xn+1 = xn+1 | X1=x1
-,X2=x2
-,..,Xn=xn
-) = P(Xn+1 = xn+1 | Xn=xn
-)</h3>
+                <h1>COMMUNITY HEALTH INFORMATION
+NETWORKS (CHINS)</h1>
             </center>
-            <p> &nbsp;&nbsp;&nbsp; In other words, if we generate a sequence of random variables X1, X2, .., Xn, such that
-the next state Xn+1 is a sample from a distribution that depends only on the current state
-of the chain, Xn, and does not depend on the rest of the chain X1, X2,..Xn-1, this sequence
-is called a Markov chai</p>
-            <p>The conditional probability P(Xn+1| Xn) is known as the transition kernel of the
-Markov chain. When the transition kernel is independent of n, then it is said to be
-stationary, and the process is referred to as a time-homogeneous Markov chain. A finite
-Markov chain is such that there are only a finite number k of possible states s1,s2,..,sk,
-and the process must be in one of these k states. If any of these states can be reached
-                from any other state in a finite number of moves, the chain is said to be irreducible</p>
-            
-            <h2>Markov Chain Simulation</h2>
-            <p> &nbsp;&nbsp;&nbsp;&nbsp;The idea of Markov Chain simulation is to simulate a random walk in the parameter
-space that converges to a stationary distribution that is the target multivariate distribution
-π(x) that we want to simulate (typically a joint posterior distribution). It is possible to construct
-a Markov chain such that this stationary distribution is the target distribution π(x). Therefore</p>
-        
-            
-        </biv>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;During the late 1990s and again more recently, CHINs were seen to offer the health
+care industry a platform to address and mine medical data to support public and rural
+health issues. CHINs have been defined as: “Interorganizational systems (IOSs) using
+information technology(ies) and telecommunications to store, transmit, and transform
+clinical and financial information. This information can be shared among cooperative and
+competitive participants, such as payors, hospitals, alternative delivery systems, clinics,
+physicians, and home health agencies” (Brennan, Schneider & Tornquist, 1996; Payton
+& Ginzberg, 2001). IOSs have emerged as a primary business model in a number of
+industries given the application of wireless, application-integration, Internet, and
+broadband technologies. Starting with reservation systems in the airline industry (e.g.,
+the SABRE system), IOSs have been used to implement strategic and competitive
+advantage in the cotton, hospital supply, consumer goods retailing, and automotive
+industries, among others (Clemons & Row, 1993; Copeland & McKenney, 1988). Given
+their intended direction for extensive mining of medical data among health care providers,payors, employers, and research institutions, CHINs offer an immediate platform for
+patient profiling, fraud detection, profitability analysis, and retention management.</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Based on a voluntary model of organizational participation, CHINs enable member
+organizations to share health services data in order to meet common objective(s), ranging
+from profit maximization to improvement of public health conditions and wellness.
+Further, CHINs can provide a myriad of services from electronic transaction processing
+to telephone-based referral information (Brennan et al., 1996). The deployment of CHINs
+is confronted with a tremendous number of implementation barriers, largely behavioral
+and political in nature. Among the numerous deterrents, as found in Payton and Ginzberg
+(2001), were loss of organizational autonomy and control; lack of vendor and patient
+support; and lack of understanding of customers’ (patients) needs. Critical to e-health
+models, however, are the data quality issues that enable health care providers, researchers, payors, and consumers to make more informed medical decisions.</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Cooper and Zmud (1990) adopted a diffusion process model of IT implementation
+that is based on stages and processes as outlined in Table 1. Cooper and Zmud suggest
+that the process model can be used as a framework for understanding how critical
+implementation factors evolve over time.</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Cooper and Zmud (1990) identify five broad contextual factors that might impact the
+implementation process: user, organization, task, technology, and environment. Their
+description of the implementation process, however, suggests an alternative clustering
+of contextual variables. For instance, they state that, in the initiation stage, “pressure
+to change evolves from either organizational need (pull) technological innovation (push)</p>
+            <h6>Table 1: IT Implementation process model from Cooper and Zmud (1990)</h6>
+            <center>
+            <img src="Screenshot%202024-01-17%20115342.png" width="1062px" height="562px">
+                </center>
+            <p>or both” (p. 124). In the adoption stage, they describe the processes of “rational and
+political” negotiations, and in subsequent stages, they suggest that “technology”
+impacts the system implementation. Following this, three factor classes are defined:
+push/pull factors, behavioral factors and shared systems topologies. That is, these sets
+of factors continue to be important as organizations are pressured to change, examine
+opportunities for IOS solutions, obtain organizational backing, develop the IOS applications, and continue to engage in cooperative IOS</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;My proposed CHIN implementation model is shown in Figure 1. This implementation model is important to academicians and practitioners, alike – as it holds implications
+for data utilization, management, and mining.</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Push or pull factors are contextual elements that can impact and influence an
+organization’s willingness to participate in IOS initiatives and include perceived competitive advantage (Grover, 1993), competition (Johnston & Vitale, 1988; Copeland &
+McKenney, 1988; Grover, 1993), government actions and policies (Linder, 1992; Anderson, Aydin & Jay, 1994), and perceived economic benefits (Mo</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Among the Push/Pull Factors, I expected both the economic dimensions and
+government policies to have a positive impact on the implementation effort. Health care
+organizations are currently being pressed toward greater cooperation by government
+decisions, policies, and practices (e.g., Medicare, Medicaid, Joint Commission on
+Accreditation of Healthcare Organizations, prospective payment system). Further, the
+need to reduce costs while maintaining or increasing quality is a key objective of
+numerous managed care models (Ferrat, Lederer, Hall, & Krella, 1996; Grover, 1993;</p>
+            <h6>Figure 1: Cooperative CHIN implementation model.
+</h6>
+            <img src="Screenshot%202024-01-17%20120843.png" width="1000px" height="500px">
+            <p>Kongstvedt, 1989; Little, 1994). Competition among institutions was expected to play
+a minor role, given the rise of community models of health care delivery (Brennan et al.,
+1996; Payton, Brennan, & Ginzberg, 1995), as health care players learn to cooperate and
+collaborate (Ferret et al., 1996) in an effort to overcome the limitations associated with
+previously noted economic dimensions.</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Behavioral factors relate to attributes and actions of key system stakeholders.
+These include customer support (in this study, the customer is defined as the patient);
+end-user support (Anderson et al., 1994); organizational autonomy and control (Moritz,
+1986); physician, application vendor, and top management support (Anderson et al.,
+1994; Grover, 1993; Lucas, Ginzberg, & Schultz, 1988). In the case of CHINs, application
+vendor support is vital for organizations to gain access to the needed products (Kim &
+Michelman, 1990). Another critical behavioral factor is the political dynamics of the
+implementation process, which often impacts system endorsement and resource commitment (Aydin & Rice, 1992; Kimberly & Evanisko, 1981).</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Of the Behavioral Factors, quality of CHIN management, vendor support, patient
+support, physician support, and end-user support are all expected to have positive
+impact on implementation progress. Each of these factors has been shown to foster
+change in various intra- and inter-organizational domains (Anderson et al., 1994;
+Clemons & Row, 1993; Grover, 1993; Lucas et al., 1990; Whang, 1992), and the same result
+should obtain in the CHIN context. Strong autonomy and control of member organizations, however, will tend to inhibit successful CHIN implementation, as organizations
+struggle with the tradeoffs of losing some autonomy to the benefits of shared information
+(Brockhoff & Teichert, 1995). Political factors, arising from conflicting personal and
+organizational objectives among stakeholders, will tend to impede implementation
+                progress (Beath, 1991; Linder, 1992).</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Shared or integrated systems topologies represent certain aspects of the infrastructure needed for a CHIN. These factors include arrangements for cooperation and
+information sharing, as well as for assuring information quality (Clemons & Row, 1993;
+Kim & Michelman, 1990; Mason, 1991). These cooperative arrangements for CHINs may
+involve physicians, hospitals, third-party payors, laboratories, and pharmacies and will
+require an increased degree of electronic information sharing with anticipated improved
+information quality (Ernst & Young, 1994; Little, 1994).</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;oth elements of Shared System Topologies— information sharing and information quality—were predicted to have favorable impacts on implementation progress.
+The prior existence of shared systems would provide foundations for building more
+efficient and effective mechanisms for inter-organizational, community-based health
+care delivery. As the degree of information sharing among inter-organizational participants increased, the quality of information available was also expected to increase,
+thereby fostering successful implementation (Clemons & Row, 1993).</p>
+            <h1>FINDINGS USING A CASE METHODOLOGY</h1>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Thus, using a case methodology to test the absence or presence of the factors listed
+in Figure 1, the results indicated in Table 2 emerged, based on data collected from 30
+</p>
+        </div>
     </body>
 </html>
